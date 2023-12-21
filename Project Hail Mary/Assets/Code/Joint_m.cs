@@ -14,6 +14,8 @@ public class Joint_m : MonoBehaviour
 
     public float rotate_rate = 20f;
 
+    public bool do_thing = false;
+
     public void m_Rotate(float _angle) {
         // Rotate on the transform.forward local axis
 
@@ -42,6 +44,11 @@ public class Joint_m : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
+    }
+
+    public IEnumerator dog(float degree) {
+        yield return new WaitForSeconds(5f);
+        m_Rotate(degree);
     }
 }

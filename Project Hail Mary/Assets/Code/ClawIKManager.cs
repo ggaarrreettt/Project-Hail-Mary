@@ -32,6 +32,8 @@ public class ClawIKManager : MonoBehaviour
         float distance2 = GetDistance(m_end.transform.position, m_target.transform.position);
         _Joint_m.m_Rotate(-deltaTheta);
 
+        
+
         return (distance2 - distance1) / deltaTheta;
     }
 
