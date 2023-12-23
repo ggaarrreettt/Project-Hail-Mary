@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Claw
   - PlayerBed
+  - Ladder
   layers:
   - Default
   - TransparentFX

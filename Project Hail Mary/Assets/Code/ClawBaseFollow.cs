@@ -31,7 +31,7 @@ public class ClawBaseFollow : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
+    { 
         followTarget();        
     }
 
