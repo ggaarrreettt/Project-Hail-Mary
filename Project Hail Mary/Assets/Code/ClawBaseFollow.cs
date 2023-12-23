@@ -13,7 +13,15 @@ public class ClawBaseFollow : MonoBehaviour
 
     public static Transform target;
 
+
+
     public float rotate_speed = 5f;
+
+
+
+    public static void changeTarget(Transform targ) {
+        target = targ;
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -24,27 +32,11 @@ public class ClawBaseFollow : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(PlayerMovement.grabbed_by_claw == false) {
-            gotothe();
-        }
+        followTarget();        
     }
 
-
-    private void followPlayer() {
-        Vector3 target_line = (target.position - transform.position);
-        
-        
-        float singleStep = rotate_speed * Time.deltaTime;
-
-        //Vector3 newDirection = Vector3.RotateTowards(transform.right, target_line, singleStep, 0.0f);
-        Vector3 newDirection = Vector3.RotateTowards(transform.right, target_line, singleStep, 0.0f);
-
-
-        transform.rotation = Quaternion.LookRotation(newDirection);
-
-    }
-
-    public void gotothe() {
+    // Follows the 'target' transform
+    public void followTarget() {
         // Determine which direction to rotate towards
 
         Vector3 targetDirection = target.position - transform.position;

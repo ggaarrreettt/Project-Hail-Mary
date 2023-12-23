@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657838, g: 0.49641228, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -4311,7 +4311,7 @@ MonoBehaviour:
   root: {fileID: 710277316}
   end: {fileID: 1188128257}
   rotate_speed: 4
-  steps: 15
+  steps: 1
   player: {fileID: 2120979322}
   player_bed: {fileID: 836674903}
   threshhold: 0.05
@@ -4997,6 +4997,63 @@ PrefabInstance:
       addedObject: {fileID: 535277377}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7b43733586a79c04ea4ccc4850bb2489, type: 3}
+--- !u!1001 &1596945674
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 236974566819043113, guid: b41ee3da767776a42b675734c47204ca, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 5.0511312
+      objectReference: {fileID: 0}
+    - target: {fileID: 236974566819043113, guid: b41ee3da767776a42b675734c47204ca, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 236974566819043113, guid: b41ee3da767776a42b675734c47204ca, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 11.216875
+      objectReference: {fileID: 0}
+    - target: {fileID: 236974566819043113, guid: b41ee3da767776a42b675734c47204ca, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 236974566819043113, guid: b41ee3da767776a42b675734c47204ca, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 236974566819043113, guid: b41ee3da767776a42b675734c47204ca, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 236974566819043113, guid: b41ee3da767776a42b675734c47204ca, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 236974566819043113, guid: b41ee3da767776a42b675734c47204ca, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 236974566819043113, guid: b41ee3da767776a42b675734c47204ca, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 236974566819043113, guid: b41ee3da767776a42b675734c47204ca, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 577084933302734227, guid: b41ee3da767776a42b675734c47204ca, type: 3}
+      propertyPath: m_Name
+      value: ResetPosition
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b41ee3da767776a42b675734c47204ca, type: 3}
 --- !u!1001 &1638859392
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5390,6 +5447,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &1794052178 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 236974566819043113, guid: b41ee3da767776a42b675734c47204ca, type: 3}
+  m_PrefabInstance: {fileID: 1596945674}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1828780079
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5564,7 +5626,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 236974566819043113, guid: b41ee3da767776a42b675734c47204ca, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.7528758
+      value: 3.65
       objectReference: {fileID: 0}
     - target: {fileID: 236974566819043113, guid: b41ee3da767776a42b675734c47204ca, type: 3}
       propertyPath: m_LocalPosition.z
@@ -5846,6 +5908,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   near_bed: 0
+  claw_reset: {fileID: 1794052178}
   player_bed: {fileID: 836674903}
   speed: 12
 --- !u!1001 &2145528068
@@ -14578,3 +14641,4 @@ SceneRoots:
   - {fileID: 1036918253}
   - {fileID: 836674903}
   - {fileID: 2120979322}
+  - {fileID: 1596945674}

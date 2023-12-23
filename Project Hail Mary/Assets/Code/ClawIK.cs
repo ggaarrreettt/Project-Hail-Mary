@@ -6,6 +6,7 @@ using UnityEngine;
 public class ClawIK : MonoBehaviour
 {
 
+
     public ClawJoint root;
     public ClawJoint end;
 
@@ -15,6 +16,9 @@ public class ClawIK : MonoBehaviour
     public Transform player;
 
     public Transform player_bed;
+
+
+
 
     static public Transform target;
     public float threshhold = 0.05f;
@@ -45,15 +49,14 @@ public class ClawIK : MonoBehaviour
         target = player;
     }
 
+    public static void changeTarget(Transform targ) {
+        target = targ;
+    }
+
     // Update is called once per frame
     void Update()
     {
-
-
-
         // Check if need to put the player in bed
-        
-
         // Do a number of steps
         for (int i = 0; i < steps; i++) {
             float distance = GetDistance(end.transform, target.transform);
