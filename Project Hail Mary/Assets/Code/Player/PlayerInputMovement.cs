@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerInputMovement : MonoBehaviour
 {
@@ -13,23 +14,35 @@ public class PlayerInputMovement : MonoBehaviour
 
     public float player_speed = 3.5f;
 
+    private string scene_number;
 
+    public bool dorm_scene = false;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        scene_number = SceneManager.GetActiveScene().name;
+        if(scene_number == "Dormitory") {
+            dorm_scene = true;
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        bool grabbed_by_claw = playerClawMovement.grabbed_by_claw;
-        bool in_bed = playerBedMovement.in_bed;
         bool on_ladder = playerLadderMovement.on_ladder;
-        if(!grabbed_by_claw && !in_bed && !on_ladder) {
-            inputMovement();
+        if(dorm_scene) {
+            Debug.Log("Dorm Scene");
+            bool grabbed_by_claw = playerClawMovement.grabbed_by_claw;
+            bool in_bed = playerBedMovement.in_bed;
+            if(!grabbed_by_claw && !in_bed && !on_ladder) {
+                inputMovement();
+            } 
+        } else {
+            if(!on_ladder) {
+                inputMovement();
+            }
         }
     }
 

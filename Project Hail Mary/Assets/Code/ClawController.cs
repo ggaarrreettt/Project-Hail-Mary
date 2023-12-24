@@ -128,9 +128,12 @@ public class ClawController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        rotateClaw();
-        doClawKinematics();
+        if(!PauseMenu.game_paused){
+            rotateClaw();
+            doClawKinematics();
+        }
     }
+
 
 
 }

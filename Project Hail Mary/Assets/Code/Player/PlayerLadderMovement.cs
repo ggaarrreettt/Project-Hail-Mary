@@ -26,16 +26,28 @@ public class PlayerLadderMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        bool grabbed_by_claw = playerClawMovement.grabbed_by_claw;
-        bool in_bed = playerBedMovement.in_bed;
 
-        if(!in_bed && !grabbed_by_claw && near_ladder) {
-            // Join/leave ladder
-            joinLeaveLadder();
 
-            if(on_ladder) {
-                // Movement up/down ladder
-                ladderMovement();
+        if(playerInputMovement.dorm_scene) {
+            bool grabbed_by_claw = playerClawMovement.grabbed_by_claw;
+            bool in_bed = playerBedMovement.in_bed;
+
+
+            if(!in_bed && !grabbed_by_claw && near_ladder) {
+                // Join/leave ladder
+                joinLeaveLadder();
+
+                if(on_ladder) {
+                    // Movement up/down ladder
+                    ladderMovement();
+                }
+            }
+        } else {
+            if(near_ladder) {
+                joinLeaveLadder();
+                if(on_ladder) {
+                    ladderMovement();
+                }
             }
         }
     }

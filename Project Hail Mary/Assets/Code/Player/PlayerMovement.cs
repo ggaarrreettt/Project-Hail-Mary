@@ -49,7 +49,6 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {       
-
         // Only do player movement if not grabbed by claw, not in bed, not on ladder
         if(!grabbed_by_claw && !in_bed && !on_ladder) {
             player_input_movement();
