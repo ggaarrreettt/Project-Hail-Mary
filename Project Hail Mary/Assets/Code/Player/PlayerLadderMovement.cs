@@ -13,7 +13,7 @@ public class PlayerLadderMovement : MonoBehaviour
 
     public bool near_ladder;
 
-    public bool on_ladder;
+    public bool on_ladder = false;
 
     private Rigidbody rb;
 
@@ -63,9 +63,11 @@ public class PlayerLadderMovement : MonoBehaviour
             if(on_ladder) {
                 on_ladder = false;
                 rb.useGravity = true;
+                rb.isKinematic = false;
             } else {
                 on_ladder = true;
                 rb.useGravity = false;
+                rb.isKinematic = true;
 
             }
         }

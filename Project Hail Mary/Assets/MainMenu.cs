@@ -6,7 +6,7 @@ public class MainMenu : MonoBehaviour
 {
 
 
-    public float start_wait_time = 1.5f;
+    public float start_wait_time = 0.5f;
 
     // Start is called before the first frame update
     void Start()
@@ -27,7 +27,7 @@ public class MainMenu : MonoBehaviour
     // Waits start_wait_time before beginning game.
     private IEnumerator gameStartTiming() {
         yield return new WaitForSecondsRealtime(start_wait_time);
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        SceneManager.LoadScene("Dormitory");
     }
 
     public void QuitGame() {

@@ -8,6 +8,8 @@ TagManager:
   - PlayerBed
   - Ladder
   - LevelChangeCollider
+  - LevelChangeColliderUp
+  - LevelChangeColliderDown
   layers:
   - Default
   - TransparentFX
