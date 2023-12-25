@@ -19,6 +19,9 @@ public class MousLook : MonoBehaviour
         mouseSensitivity = MainManager.Instance.mouse_sense;
     }
 
+    void Update() {
+        mouseSensitivity = MainManager.Instance.mouse_sense;
+    }
 
     void FixedUpdate() {
         float mousX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;

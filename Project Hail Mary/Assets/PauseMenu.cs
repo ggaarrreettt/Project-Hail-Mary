@@ -11,6 +11,8 @@ public class PauseMenu : MonoBehaviour
 
     public GameObject pauseMenuUI;
 
+    public GameObject settingsMenuUI;
+
     private void Awake()
     {
         if (Instance != null)
@@ -45,7 +47,7 @@ public class PauseMenu : MonoBehaviour
 
 
 
-            if(Input.GetKeyDown(KeyCode.Escape)) {
+            if(Input.GetKeyDown(KeyCode.Escape) && SettingsMenu.Instance.settingsMenuActive == false) {
                 if(game_paused) {
                     Resume();
                 } else {
@@ -55,16 +57,26 @@ public class PauseMenu : MonoBehaviour
         }
     }
 
+
+    // Takes from pause menu to settings menu
+    public void settingsMenu() {
+        pauseMenuUI.SetActive(false);
+        settingsMenuUI.SetActive(true);
+        SettingsMenu.Instance.settingsMenuActive = true;
+    }
+
     public void Resume() {
         pauseMenuUI.SetActive(false);
         Time.timeScale = 1f;
         game_paused = false;
+        SoundManager.Instance.muteMenuMusic();
     }
 
     void Pause() {
         pauseMenuUI.SetActive(true);
         Time.timeScale = 0f;
         game_paused = true;
+        SoundManager.Instance.unmuteMenuMusic();
     }
 
     public void QuitGame() {

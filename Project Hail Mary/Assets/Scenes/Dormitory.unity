@@ -1201,6 +1201,22 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 2120979322}
+    - target: {fileID: 472190999611001094, guid: 65d5e1e61dffb409e98b37a44973b184, type: 3}
+      propertyPath: threshhold
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1153515409880558584, guid: 65d5e1e61dffb409e98b37a44973b184, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.159
+      objectReference: {fileID: 0}
+    - target: {fileID: 1153515409880558584, guid: 65d5e1e61dffb409e98b37a44973b184, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.617
+      objectReference: {fileID: 0}
+    - target: {fileID: 1153515409880558584, guid: 65d5e1e61dffb409e98b37a44973b184, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.194
+      objectReference: {fileID: 0}
     - target: {fileID: 1561528964042267376, guid: 65d5e1e61dffb409e98b37a44973b184, type: 3}
       propertyPath: m_Mesh
       value: 

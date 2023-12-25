@@ -22,6 +22,7 @@ public class MainMenu : MonoBehaviour
 
     public void StartGame() {
         StartCoroutine(gameStartTiming());
+        SoundManager.Instance.muteMenuMusic();
     }
 
     // Waits start_wait_time before beginning game.

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ClawController : MonoBehaviour
 {
-
+    public static bool is_moving = false;
     // Transform of the player
     public Transform player;
 
@@ -23,11 +23,13 @@ public class ClawController : MonoBehaviour
     // Transform to keep track of the transform being targeted by the claw
     private Transform curr_target;
 
+    public static Vector3 claw_position = new Vector3(0f,0f,0f);
+
     public float rotate_speed = 5f;
     public float kinematic_speed;
     public int steps = 20;
 
-    public float threshhold = 0.05f;
+    public float threshhold = 0.5f;
 
 
     /*
@@ -79,16 +81,18 @@ public class ClawController : MonoBehaviour
     }
 
     private void doClawKinematics() {
-        for (int i = 0; i < steps; i++) {
-            float distance = GetDistance(claw_end.transform, curr_target.transform);
-            if (distance > threshhold) {
-                ClawJoint current = claw_base;
-                while(current != null) {
-                    float slope = calculateSlope(current);
-                    current.rotateJoint(-slope * kinematic_speed);
-                    current = current.GetChild(); 
-                }
+        float distance = GetDistance(claw_end.transform, curr_target.transform);
+        if (distance > threshhold) {
+            //Debug.Log("WERE MOVING");
+            is_moving = true;
+            ClawJoint current = claw_base;
+            while(current != null) {
+                float slope = calculateSlope(current);
+                current.rotateJoint(-slope * kinematic_speed);
+                current = current.GetChild(); 
             }
+        } else {
+            is_moving = false;
         }
     }
 
