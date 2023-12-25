@@ -63,6 +63,7 @@ public class PauseMenu : MonoBehaviour
         pauseMenuUI.SetActive(false);
         settingsMenuUI.SetActive(true);
         SettingsMenu.Instance.settingsMenuActive = true;
+        SettingsMenu.Instance.prev_screen = pauseMenuUI;
     }
 
     public void Resume() {

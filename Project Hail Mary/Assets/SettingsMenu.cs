@@ -12,6 +12,8 @@ public class SettingsMenu : MonoBehaviour
 
     public bool settingsMenuActive = false;
 
+    public GameObject prev_screen;
+
     private void Awake()
     {
         if (Instance != null)
@@ -37,13 +39,21 @@ public class SettingsMenu : MonoBehaviour
     }
 
     // Takes you from settings menu to the pause menu
-    public void returnToPauseMenu() {
+    public void returnToPrevMenu() {
         settingsMenuUI.SetActive(false);
-        pauseMenuUI.SetActive(true);
+        prev_screen.SetActive(true);
         settingsMenuActive = false;
     }
 
     public void changeSensitivity(float sens) {
         MainManager.Instance.mouse_sense = sens;
+    }
+
+    public void changeMusicVolume(float volume) {
+        SoundManager.Instance.default_menu_music_level = volume;
+    }
+
+    public void changeGameVolume(float volume) {
+        SoundManager.Instance.default_claw_sound_level = volume;
     }
 }

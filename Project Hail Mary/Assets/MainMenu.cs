@@ -7,6 +7,10 @@ public class MainMenu : MonoBehaviour
 
     public float start_wait_time = 0.5f;
 
+    public GameObject settingsMenuUI;
+
+    public GameObject mainMenuUI;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -33,5 +37,13 @@ public class MainMenu : MonoBehaviour
 
     public void QuitGame() {
         Application.Quit();
+    }
+
+    public void settingsMenu() {
+        SoundManager.Instance.menu_open = true;
+        mainMenuUI.SetActive(false);
+        settingsMenuUI.SetActive(true);
+        SettingsMenu.Instance.settingsMenuActive = true;
+        SettingsMenu.Instance.prev_screen = mainMenuUI;
     }
 }

@@ -16,7 +16,7 @@ public class SoundManager : MonoBehaviour
 
     public float default_claw_sound_level = 0.025f;
 
-    private bool menu_open = false;
+    public bool menu_open = false;
 
 
 
@@ -60,6 +60,9 @@ public class SoundManager : MonoBehaviour
     {
         if(!menu_open) {
             checkClawSound();
+        } else {
+            // Menu is open, update music volume
+            menuMusicSource.volume = default_menu_music_level;
         }
     }
 
