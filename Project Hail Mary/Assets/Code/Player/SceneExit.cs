@@ -10,9 +10,11 @@ public class SceneExit : MonoBehaviour
     private void OnTriggerEnter(Collider other) {
         if(other.tag == "LevelChangeColliderUp") {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + increment_value);
+            MainManager.Instance.scene_name_prev = "";
         }
         if(other.tag == "LevelChangeColliderDown") {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + -increment_value);
+            MainManager.Instance.scene_name_prev = "";
         }
     }
 }

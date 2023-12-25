@@ -23,7 +23,9 @@ public class PlayerBedMovement : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        putInBed();
+        if(MainManager.Instance.scene_name_prev == "MainMenu"){
+            putInBed();
+        }
     }
 
     // Update is called once per frame

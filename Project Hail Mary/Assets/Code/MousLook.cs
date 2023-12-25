@@ -6,7 +6,7 @@ public class MousLook : MonoBehaviour
 {
 
 
-    public float mouseSensitivity = 100f;
+    private float mouseSensitivity = 500f;
 
     public Transform playerBody;
 
@@ -16,6 +16,7 @@ public class MousLook : MonoBehaviour
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
+        mouseSensitivity = MainManager.Instance.mouse_sense;
     }
 
 

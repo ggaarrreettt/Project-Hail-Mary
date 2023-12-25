@@ -33,7 +33,6 @@ public class PlayerInputMovement : MonoBehaviour
     {
         bool on_ladder = playerLadderMovement.on_ladder;
         if(dorm_scene) {
-            Debug.Log("Dorm Scene");
             bool grabbed_by_claw = playerClawMovement.grabbed_by_claw;
             bool in_bed = playerBedMovement.in_bed;
             if(!grabbed_by_claw && !in_bed && !on_ladder) {

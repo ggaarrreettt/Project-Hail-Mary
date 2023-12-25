@@ -5,13 +5,13 @@ using UnityEngine.SceneManagement;
 public class MainMenu : MonoBehaviour
 {
 
-
     public float start_wait_time = 0.5f;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        MainManager.Instance.scene_name_prev = "MainMenu";
+        MainManager.Instance.mouse_sense = 500f;
     }
 
     // Update is called once per frame

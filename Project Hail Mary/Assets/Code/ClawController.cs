@@ -121,8 +121,12 @@ public class ClawController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {   
-        // On start set the current target to the reset position
-        curr_target = reset_position;
+        // On start check if coming from main menu or other parts of ship
+        if(MainManager.Instance.scene_name_prev == "MainMenu") {
+            curr_target = reset_position;
+        } else {
+            curr_target = player;
+        }
     }
 
     // Update is called once per frame
