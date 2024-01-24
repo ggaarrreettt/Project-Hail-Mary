@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class PlayerClawMovement : MonoBehaviour
 {
 
@@ -18,6 +18,8 @@ public class PlayerClawMovement : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
     // Update is called once per frame

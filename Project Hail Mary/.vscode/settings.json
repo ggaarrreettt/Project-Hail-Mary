@@ -56,5 +56,8 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "Project Hail Mary.sln"
+    "dotnet.defaultSolution": "Project Hail Mary.sln",
+    "files.associations": {
+        "factor.h": "c"
+    }
 }
